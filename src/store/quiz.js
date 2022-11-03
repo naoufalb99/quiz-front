@@ -1,4 +1,5 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects'
+import { BASE_API_URL } from '../constants'
 import fetch from '../core/fetch'
 
 const createActionName = (name) => `quiz/${name}`
@@ -116,9 +117,9 @@ function * submitQuiz () {
 }
 
 const queries = {
-  fetchQuiz: quizId => `/quizzes/${quizId}`,
-  startQuiz: quizId => `/quizzes/${quizId}/attempt/start`,
-  submitQuiz: quizId => `/quizzes/${quizId}/attempt/finish`
+  fetchQuiz: quizId => `${BASE_API_URL}/quizzes/${quizId}`,
+  startQuiz: quizId => `${BASE_API_URL}/quizzes/${quizId}/attempt/start`,
+  submitQuiz: quizId => `${BASE_API_URL}/quizzes/${quizId}/attempt/finish`
 }
 
 export function * quizRootSaga () {

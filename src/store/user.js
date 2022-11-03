@@ -1,4 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
+import { BASE_API_URL } from '../constants'
 import fetch from '../core/fetch'
 
 const createActionName = (name) => `user/${name}`
@@ -59,7 +60,7 @@ function * signUp ({ data: { firstName, lastName, email, phone }, next }) {
 }
 
 const queries = {
-  signUp: '/users/signUp'
+  signUp: `${BASE_API_URL}/users/signUp`
 }
 
 export function * userRootSaga () {
