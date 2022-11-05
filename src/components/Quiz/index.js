@@ -10,6 +10,7 @@ import { fetchQuizAction, submitQuizAction } from '../../store/quiz'
 import PageSpinner from '../PageSpinner'
 import Layout from '../Layout'
 import Modal from '../Modal'
+import TimeRemaining from '../TimeRemaining'
 
 const useStyles = createUseStyles(style)
 
@@ -57,7 +58,7 @@ function Quiz () {
         <div className={scoreValue}>{attempt.score}/{totalQuestions}</div>
         <div className={scoreText2}>Questions correct</div>
       </Modal>
-      <Layout noHeader>
+      <Layout>
         <div className={quiz}>
           <div className={selectors}>
             {
@@ -66,9 +67,10 @@ function Quiz () {
           </div>
           <div className={header}>
             <div className={clsx(previous, currentQuestionIndex === 0 && hidePrevious)} onClick={handlePrevious}>Previous</div>
-            <div className={logo}>
-              ROBOTIQUE FSR
-            </div>
+            {quizData.timeLimit && <TimeRemaining
+              totalMinutes={quizData.timeLimit}
+              startDate={new Date(attempt.startedAt)}
+                                   />}
           </div>
           <div className={quizPosition}>Question {currentQuestionIndex + 1} / {totalQuestions}</div>
           <Question

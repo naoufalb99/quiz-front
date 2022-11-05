@@ -1,4 +1,7 @@
 export default {
+  quiz: {
+    marginTop: 24
+  },
   nextButtonWrapper: {
     marginTop: 80,
     display: 'flex',

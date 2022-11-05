@@ -17,7 +17,8 @@ const initialState = {
   attempt: {
     isLoading: false,
     score: null,
-    finishedAt: null
+    finishedAt: null,
+    startedAt: null
   }
 }
 

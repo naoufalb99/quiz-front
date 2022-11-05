@@ -12,7 +12,7 @@ export default {
   logo: {
     color: '#020B38',
     fontWeight: '600',
-    fontSize: '1xem',
+    fontSize: '1em',
     letterSpacing: '1px'
   },
   subTitle: {
